@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gallery — factotum</title>
+  <meta name="description" content="A gallery of work from the factotum studio — clay sculptures (materia botanica) and fine-line watercolour drawings by Elena Buzzo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">factotum<span class="dot">.</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="workshops.html">workshops</a></li>
+        <li><a href="gallery.html" aria-current="page">gallery</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">gallery</span>
+        <h1>made slowly, by hand.</h1>
+        <p>A look at work from the factotum world &mdash; raw clay, dried flowers, ink and watercolour. A little of what's possible when you give yourself room to explore.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="gallery-tabs" role="tablist" aria-label="Gallery sections">
+        <button role="tab" data-target="sculptures" aria-selected="true">sculptures</button>
+        <button role="tab" data-target="drawings" aria-selected="false">drawings</button>
+        <button role="tab" data-target="textiles" aria-selected="false">textiles</button>
+      </div>
+    </div>
+
+    <!-- ============ Sculptures: project showcase ============ -->
+    <section class="section section--tight" data-panel="sculptures">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">materia botanica · 2024</span>
+          <h2>clay &amp; dried flowers</h2>
+          <p>This project blends raw clay and dried flowers, exploring fragility, preservation and the transformation of nature. The contrast between durable clay and delicate blooms reflects nature's balance between resilience and impermanence.</p>
+        </div>
+
+        <div class="showcase-row reveal">
+          <div class="showcase-row__media">
+            <img src="assets/images/sculptures/sculpture-1.jpeg" alt="Clay face vase holding white and blue dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </div>
+          <div>
+            <h3>faces that hold the seasons</h3>
+            <p>Each vessel is hand-shaped from raw clay, its quiet expression left deliberately imperfect. Dried botanicals turn every piece into a small, slow still-life.</p>
+          </div>
+        </div>
+
+        <div class="showcase-row reveal">
+          <div class="showcase-row__media">
+            <img src="assets/images/sculptures/sculpture-3.jpeg" alt="Clay face vase holding purple dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </div>
+          <div>
+            <h3>resilience &amp; impermanence</h3>
+            <p>The durability of fired clay set against the fragility of dried flowers &mdash; a study in how things last, and how they don't.</p>
+          </div>
+        </div>
+
+        <div class="section-head reveal" style="margin-top:1rem;">
+          <h3>more from the series</h3>
+        </div>
+        <div class="masonry reveal">
+          <button class="tile" type="button" aria-label="View sculpture">
+            <img src="assets/images/sculptures/sculpture-2.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </button>
+          <button class="tile" type="button" aria-label="View sculpture">
+            <img src="assets/images/sculptures/sculpture-4.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </button>
+          <button class="tile" type="button" aria-label="View sculpture">
+            <img src="assets/images/sculptures/sculpture-5.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </button>
+          <button class="tile" type="button" aria-label="View sculpture">
+            <img src="assets/images/sculptures/sculpture-6.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </button>
+          <button class="tile" type="button" aria-label="View sculpture">
+            <img src="assets/images/sculptures/sculpture-7.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Drawings: masonry (rendered by JS) ============ -->
+    <section class="section section--tight" data-panel="drawings" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">drawings</span>
+          <h2>fine lines &amp; watercolour</h2>
+          <p>Where the factotum journey began &mdash; mixing fine ink lines with watercolour washes. Each piece is dated like a diary entry. Click any drawing to view it larger.</p>
+        </div>
+        <div class="masonry" id="drawingsMasonry"></div>
+      </div>
+    </section>
+
+    <!-- ============ Textiles: coming soon ============ -->
+    <section class="section section--tight" data-panel="textiles" hidden>
+      <div class="container">
+        <div class="coming-soon reveal">
+          <span class="eyebrow">textiles</span>
+          <h2 style="margin-block:0.5rem 0.75rem;">coming soon</h2>
+          <p class="mx-auto" style="max-width:44ch;">A new chapter in the factotum journey is taking shape. Textile work is in progress &mdash; follow along on Instagram to see it unfold.</p>
+          <p style="margin-top:1.5rem;"><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener" class="btn btn--ghost">@factotum.lab</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Lightbox ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__btn lightbox__close" aria-label="Close">&times;</button>
+    <button class="lightbox__btn lightbox__prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox__btn lightbox__next" aria-label="Next">&#8250;</button>
+    <div>
+      <img src="" alt="" />
+      <div class="lightbox__cap">
+        <span class="title"></span>
+        <span class="date"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a href="index.html" class="brand">factotum<span class="dot">.</span></a>
+        <p class="footer-tag">A versatile approach to arts &amp; crafts. A calm, hands-on creative space by Elena Buzzo.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="workshops.html">workshops</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
+      </ul>
+      <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

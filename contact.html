@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contact &amp; book — factotum</title>
+  <meta name="description" content="Book a workshop or send an enquiry to factotum. Pottery painting, sewing and textile craft sessions for individuals and groups." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">factotum<span class="dot">.</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="workshops.html">workshops</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html" aria-current="page">contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">contact &amp; book</span>
+        <h1>let's make something.</h1>
+        <p>Tell us which workshop you'd love to try, whether it's just you or a group, and any dates that work &mdash; we'll get back to you with availability.</p>
+      </div>
+    </section>
+
+    <div class="deckle"></div>
+
+    <!-- ============ Contact ============ -->
+    <section class="section">
+      <div class="container contact-grid">
+
+        <!-- Left: info -->
+        <div class="reveal">
+          <h2 style="margin-bottom:1.25rem;">get in touch</h2>
+          <ul class="contact-info">
+            <li>
+              <span class="label">email</span>
+              <a href="mailto:hello@factotum.lab">hello@factotum.lab</a>
+            </li>
+            <li>
+              <span class="label">instagram</span>
+              <a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">@factotum.lab</a>
+            </li>
+            <li>
+              <span class="label">studio</span>
+              <span style="color:var(--ink-soft);">Location &amp; opening hours coming soon.</span>
+            </li>
+          </ul>
+          <p style="margin-top:1.5rem;color:var(--ink-soft);">Prefer messages? Send a DM on Instagram &mdash; we're happy to chat through ideas for individual or group sessions.</p>
+        </div>
+
+        <!-- Right: form -->
+        <div class="form-card reveal">
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+          <!-- To go live: replace action with your Formspree endpoint, e.g.
+               action="https://formspree.io/f/yourid" -->
+          <form id="contactForm" action="" method="POST" novalidate>
+            <div class="field">
+              <label for="name">your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+              <span class="error">Please tell us your name.</span>
+            </div>
+
+            <div class="field">
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <span class="error">Please enter a valid email.</span>
+            </div>
+
+            <div class="field">
+              <label for="workshop">which workshop?</label>
+              <select id="workshop" name="workshop" required>
+                <option value="" selected disabled>choose one…</option>
+                <option>Pottery painting</option>
+                <option>Sewing</option>
+                <option>Textile crafts</option>
+                <option>Private / group session</option>
+                <option>Not sure yet</option>
+              </select>
+              <span class="error">Please pick a workshop.</span>
+            </div>
+
+            <div class="field">
+              <label for="people">how many people?</label>
+              <input type="number" id="people" name="people" min="1" value="1" />
+            </div>
+
+            <div class="field">
+              <label for="message">your message</label>
+              <textarea id="message" name="message" placeholder="Preferred dates, any questions, what you'd love to make…" required></textarea>
+              <span class="error">Please add a short message.</span>
+            </div>
+
+            <button type="submit" class="btn btn--primary">send enquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a href="index.html" class="brand">factotum<span class="dot">.</span></a>
+        <p class="footer-tag">A versatile approach to arts &amp; crafts. A calm, hands-on creative space by Elena Buzzo.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="workshops.html">workshops</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
+      </ul>
+      <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

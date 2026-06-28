@@ -1,0 +1,19 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Agent / tooling
+.claude/
+
+# Internal source material (not part of the published site)
+about.pdf
+
+# Loose original assets — the site uses the copies under assets/images/
+/drawings/
+/sculptures/
+/workshops/workshop-group-*.jpeg
+/elena.jpeg
+/factotum-card.jpeg
