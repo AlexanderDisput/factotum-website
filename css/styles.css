@@ -150,6 +150,48 @@ p { color: var(--ink-soft); }
 }
 
 /* =====================================================================
+   Scroll-drawn background line (js/artbg.js)
+   A single continuous ink line spanning the full page, drawn/un-drawn
+   with scroll. Sits behind all content; faint, non-interactive.
+   ===================================================================== */
+#artbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+#artbg svg { display: block; width: 100%; height: 100%; }
+#artbg path {
+  fill: none;
+  stroke: rgba(30, 27, 24, 0.6);    /* fine ink / charcoal */
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* White copy of the line drawn inside dark sections, behind their content. */
+.quote-band { position: relative; overflow: hidden; }
+.quote-band > .container { position: relative; z-index: 1; }
+.artbg-dark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.artbg-dark path {
+  fill: none;
+  stroke: rgba(244, 241, 234, 0.8);  /* paper-white over black */
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =====================================================================
    Header / nav
    ===================================================================== */
 .site-header {
@@ -714,6 +756,37 @@ p { color: var(--ink-soft); }
   font-size: 0.85rem;
   color: rgba(244, 241, 234, 0.65);
 }
+
+/* Footer location + map */
+.footer-map { max-width: 270px; }
+.footer-map .label {
+  display: block;
+  font-family: var(--font-display);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  color: var(--clay);
+  margin-bottom: 0.4rem;
+}
+.footer-map address {
+  font-style: normal;
+  color: var(--paper);
+  opacity: 0.85;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 0.7rem;
+}
+.footer-map iframe {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border: 0;
+  border-radius: 10px;
+  filter: grayscale(0.25) contrast(1.05);
+}
+
+/* Subtle scroll parallax on studio photos (driven by js/artbg.js) */
+.photo-card { will-change: transform; }
 
 /* =====================================================================
    First-visit watercolour intro

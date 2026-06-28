@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gallery — factotum</title>
+  <title>Craft & Pottery Gallery | factotum Dublin</title>
   <meta name="description" content="A gallery of work from the factotum studio — clay sculptures (materia botanica) and fine-line watercolour drawings by Elena Buzzo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SEO — TODO: replace https://factotum.example with the live domain before launch -->
+  <link rel="canonical" href="https://factotum.example/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="factotum" />
+  <meta property="og:locale" content="en_IE" />
+  <meta property="og:title" content="Craft &amp; Pottery Gallery | factotum Dublin" />
+  <meta property="og:description" content="Work from the factotum studio in Dublin — handmade clay sculptures and fine-line watercolour drawings by Elena Buzzo." />
+  <meta property="og:url" content="https://factotum.example/gallery.html" />
+  <meta property="og:image" content="https://factotum.example/assets/images/factotum-card.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
   <header class="site-header">
@@ -57,7 +68,7 @@
 
         <div class="showcase-row reveal">
           <div class="showcase-row__media">
-            <img src="assets/images/sculptures/sculpture-1.jpeg" alt="Clay face vase holding white and blue dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-1.webp" alt="Clay face vase holding white and blue dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </div>
           <div>
             <h3>faces that hold the seasons</h3>
@@ -67,7 +78,7 @@
 
         <div class="showcase-row reveal">
           <div class="showcase-row__media">
-            <img src="assets/images/sculptures/sculpture-3.jpeg" alt="Clay face vase holding purple dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-3.webp" alt="Clay face vase holding purple dried flowers" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </div>
           <div>
             <h3>resilience &amp; impermanence</h3>
@@ -80,19 +91,19 @@
         </div>
         <div class="masonry reveal">
           <button class="tile" type="button" aria-label="View sculpture">
-            <img src="assets/images/sculptures/sculpture-2.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-2.webp" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </button>
           <button class="tile" type="button" aria-label="View sculpture">
-            <img src="assets/images/sculptures/sculpture-4.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-4.webp" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </button>
           <button class="tile" type="button" aria-label="View sculpture">
-            <img src="assets/images/sculptures/sculpture-5.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-5.webp" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </button>
           <button class="tile" type="button" aria-label="View sculpture">
-            <img src="assets/images/sculptures/sculpture-6.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-6.webp" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </button>
           <button class="tile" type="button" aria-label="View sculpture">
-            <img src="assets/images/sculptures/sculpture-7.jpeg" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
+            <img src="assets/images/sculptures/sculpture-7.webp" alt="Clay sculpture, materia botanica" loading="lazy" data-lightbox-sculpture data-title="materia botanica" data-date="2024" />
           </button>
         </div>
       </div>
@@ -150,10 +161,17 @@
         <li><a href="contact.html">contact</a></li>
         <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
       </ul>
+      <div class="footer-map">
+        <span class="label">find us</span>
+        <address>73 Francis Street,<br />The Liberties, Dublin, D08&nbsp;T993</address>
+        <iframe title="factotum studio location on Google Maps" src="https://www.google.com/maps?q=73%20Francis%20Street%2C%20The%20Liberties%2C%20Dublin%2C%20D08%20T993&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
       <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
     </div>
   </footer>
 
+  <script src="js/artbg.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/gallery.js"></script>

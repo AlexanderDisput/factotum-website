@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>contact &amp; book — factotum</title>
+  <title>Contact & Book | factotum Workshops Dublin</title>
   <meta name="description" content="Book a workshop or send an enquiry to factotum. Pottery painting, sewing and textile craft sessions for individuals and groups." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SEO — TODO: replace https://factotum.example with the live domain before launch -->
+  <link rel="canonical" href="https://factotum.example/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="factotum" />
+  <meta property="og:locale" content="en_IE" />
+  <meta property="og:title" content="Contact &amp; Book | factotum Workshops Dublin" />
+  <meta property="og:description" content="Book a craft workshop or enquire about group events in Dublin. Pottery painting, sewing and textile sessions at factotum." />
+  <meta property="og:url" content="https://factotum.example/contact.html" />
+  <meta property="og:image" content="https://factotum.example/assets/images/factotum-card.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://factotum.example/#business",
+    "name": "factotum",
+    "description": "A hands-on creative workshop space in Dublin offering pottery painting, sewing and textile craft sessions, plus private and corporate group events.",
+    "image": "https://factotum.example/assets/images/factotum-card.jpeg",
+    "url": "https://factotum.example/",
+    "email": "hello@factotum.lab",
+    "address": { "@type": "PostalAddress", "streetAddress": "73 Francis Street, The Liberties", "addressLocality": "Dublin", "postalCode": "D08 T993", "addressCountry": "IE" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 53.3416, "longitude": -6.2725 },
+    "areaServed": "Dublin, Ireland",
+    "sameAs": ["https://instagram.com/factotum.lab"]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -128,10 +155,17 @@
         <li><a href="contact.html">contact</a></li>
         <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
       </ul>
+      <div class="footer-map">
+        <span class="label">find us</span>
+        <address>73 Francis Street,<br />The Liberties, Dublin, D08&nbsp;T993</address>
+        <iframe title="factotum studio location on Google Maps" src="https://www.google.com/maps?q=73%20Francis%20Street%2C%20The%20Liberties%2C%20Dublin%2C%20D08%20T993&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
       <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
     </div>
   </footer>
 
+  <script src="js/artbg.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
 </body>

@@ -2,6 +2,14 @@
 (function () {
   "use strict";
 
+  /* ---- WebP → JPEG fallback (older browsers) ---- */
+  document.addEventListener("error", function (e) {
+    var t = e.target;
+    if (t && t.tagName === "IMG" && /\.webp(\?|$)/.test(t.src)) {
+      t.src = t.src.replace(/\.webp(\?|$)/, ".jpeg$1");
+    }
+  }, true);
+
   /* ---- Mobile nav toggle ---- */
   var toggle = document.querySelector(".nav-toggle");
   var links = document.getElementById("navLinks");

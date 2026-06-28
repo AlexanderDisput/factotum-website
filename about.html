@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>about — factotum</title>
+  <title>About factotum | Dublin Craft Workshop Studio</title>
   <meta name="description" content="The story behind factotum and Elena Buzzo — a visual artist exploring clay, ink, watercolour and textiles, and the philosophy of a judgment-free creative space." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SEO — TODO: replace https://factotum.example with the live domain before launch -->
+  <link rel="canonical" href="https://factotum.example/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="factotum" />
+  <meta property="og:locale" content="en_IE" />
+  <meta property="og:title" content="About factotum | Dublin Craft Workshop Studio" />
+  <meta property="og:description" content="Meet Elena Buzzo, the artist behind factotum — a calm, judgment-free craft workshop space in Dublin for pottery, sewing and textiles." />
+  <meta property="og:url" content="https://factotum.example/about.html" />
+  <meta property="og:image" content="https://factotum.example/assets/images/factotum-card.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
   <header class="site-header">
@@ -44,7 +55,7 @@
     <section class="section">
       <div class="container about-grid">
         <div class="about-portrait reveal">
-          <img src="assets/images/elena.jpeg" alt="Elena Buzzo, founder of factotum, smiling at a table" loading="lazy" />
+          <img src="assets/images/elena.webp" alt="Elena Buzzo, founder of factotum, smiling at a table" loading="lazy" />
         </div>
         <div class="prose reveal">
           <span class="eyebrow">meet the maker</span>
@@ -114,10 +125,17 @@
         <li><a href="contact.html">contact</a></li>
         <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
       </ul>
+      <div class="footer-map">
+        <span class="label">find us</span>
+        <address>73 Francis Street,<br />The Liberties, Dublin, D08&nbsp;T993</address>
+        <iframe title="factotum studio location on Google Maps" src="https://www.google.com/maps?q=73%20Francis%20Street%2C%20The%20Liberties%2C%20Dublin%2C%20D08%20T993&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
       <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
     </div>
   </footer>
 
+  <script src="js/artbg.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

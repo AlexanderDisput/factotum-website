@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>factotum — a creative workshop space for arts & crafts</title>
-  <meta name="description" content="factotum is a hands-on creative workshop space by Elena Buzzo, offering pottery painting, sewing and textile craft sessions in a calm, judgment-free studio." />
+  <title>factotum | Pottery & Craft Workshops in Dublin</title>
+  <meta name="description" content="Hands-on pottery painting, sewing &amp; textile craft workshops in Dublin. Relaxed, beginner-friendly sessions for all — book your creative escape today." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SEO — TODO: replace https://factotum.example with the live domain before launch -->
+  <link rel="canonical" href="https://factotum.example/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="factotum" />
+  <meta property="og:locale" content="en_IE" />
+  <meta property="og:title" content="factotum | Pottery &amp; Craft Workshops in Dublin" />
+  <meta property="og:description" content="Hands-on pottery painting, sewing &amp; textile craft workshops in Dublin. Relaxed, beginner-friendly sessions for all." />
+  <meta property="og:url" content="https://factotum.example/" />
+  <meta property="og:image" content="https://factotum.example/assets/images/factotum-card.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://factotum.example/#business",
+    "name": "factotum",
+    "description": "A hands-on creative workshop space in Dublin offering pottery painting, sewing and textile craft sessions, plus private and corporate group events.",
+    "image": "https://factotum.example/assets/images/factotum-card.jpeg",
+    "url": "https://factotum.example/",
+    "email": "hello@factotum.lab",
+    "address": { "@type": "PostalAddress", "streetAddress": "73 Francis Street, The Liberties", "addressLocality": "Dublin", "postalCode": "D08 T993", "addressCountry": "IE" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 53.3416, "longitude": -6.2725 },
+    "areaServed": "Dublin, Ireland",
+    "sameAs": ["https://instagram.com/factotum.lab"]
+  }
+  </script>
 
   <!-- Intro overlay: decide before first paint to avoid a flash. First visit only,
        skipped for reduced-motion. Force a replay with #intro or ?intro=1.
@@ -67,7 +94,7 @@
   <main>
     <!-- ============ Hero ============ -->
     <section class="hero">
-      <div class="hero__art" style="background-image:url('assets/images/factotum-card.jpeg')"></div>
+      <div class="hero__art" style="background-image:url('assets/images/factotum-card.webp')"></div>
       <span class="blob t-green"  style="width:280px;height:280px;top:-60px;right:8%;"></span>
       <span class="blob t-magenta" style="width:200px;height:200px;bottom:-40px;right:24%;"></span>
       <div class="container hero__inner">
@@ -134,10 +161,10 @@
           <p>Work made by Elena and within the factotum world &mdash; clay, ink and watercolour, made slowly and by hand.</p>
         </div>
         <div class="teaser-strip reveal">
-          <a href="gallery.html"><img src="assets/images/sculptures/sculpture-1.jpeg" alt="Clay face vase with dried flowers" loading="lazy" /></a>
-          <a href="gallery.html"><img src="assets/images/drawings/2023-08-02_mediterraneo.jpeg" alt="Fine-line and watercolour drawing, mediterraneo" loading="lazy" /></a>
-          <a href="gallery.html"><img src="assets/images/sculptures/sculpture-3.jpeg" alt="Clay face vase with purple dried flowers" loading="lazy" /></a>
-          <a href="gallery.html"><img src="assets/images/drawings/2023-02-22_fog.jpeg" alt="Fine-line and watercolour drawing, fog" loading="lazy" /></a>
+          <a href="gallery.html"><img src="assets/images/sculptures/sculpture-1.webp" alt="Clay face vase with dried flowers" loading="lazy" /></a>
+          <a href="gallery.html"><img src="assets/images/drawings/2023-08-02_mediterraneo.webp" alt="Fine-line and watercolour drawing, mediterraneo" loading="lazy" /></a>
+          <a href="gallery.html"><img src="assets/images/sculptures/sculpture-3.webp" alt="Clay face vase with purple dried flowers" loading="lazy" /></a>
+          <a href="gallery.html"><img src="assets/images/drawings/2023-02-22_fog.webp" alt="Fine-line and watercolour drawing, fog" loading="lazy" /></a>
         </div>
         <p class="text-center" style="margin-top:2.5rem;">
           <a href="gallery.html" class="btn btn--ghost">view the full gallery</a>
@@ -155,10 +182,10 @@
         </div>
         <div class="grid grid--2">
           <figure class="photo-card reveal">
-            <img src="assets/images/workshops/workshop-group-1.jpeg" alt="Three people at a textile and sewing workshop with colourful wool and a sewing machine" loading="lazy" />
+            <img src="assets/images/workshops/workshop-group-1.webp" alt="Three people at a textile and sewing workshop with colourful wool and a sewing machine" loading="lazy" />
           </figure>
           <figure class="photo-card reveal">
-            <img src="assets/images/workshops/workshop-group-2.jpeg" alt="Two people making beaded and threaded crafts at a workshop table" loading="lazy" />
+            <img src="assets/images/workshops/workshop-group-2.webp" alt="Two people making beaded and threaded crafts at a workshop table" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -188,10 +215,17 @@
         <li><a href="contact.html">contact</a></li>
         <li><a href="https://instagram.com/factotum.lab" target="_blank" rel="noopener">instagram</a></li>
       </ul>
+      <div class="footer-map">
+        <span class="label">find us</span>
+        <address>73 Francis Street,<br />The Liberties, Dublin, D08&nbsp;T993</address>
+        <iframe title="factotum studio location on Google Maps" src="https://www.google.com/maps?q=73%20Francis%20Street%2C%20The%20Liberties%2C%20Dublin%2C%20D08%20T993&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
       <div class="footer-bottom">&copy; <span id="year"></span> factotum · made by hand.</div>
     </div>
   </footer>
 
+  <script src="js/artbg.js"></script>
   <script src="js/intro.js"></script>
   <script src="js/main.js"></script>
 </body>

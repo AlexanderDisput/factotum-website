@@ -176,7 +176,7 @@
 
   var path = buildPath();
   var brushR = Math.max(w, h) * 0.11;
-  var DURATION = 2200;   // brush sweep
+  var DURATION = 4400;   // brush sweep
   var START_DELAY = 750; // let the quote breathe first
   var startTime = null;
   var lastIdx = 0;

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: replace https://factotum.example with the live domain before launch
+Sitemap: https://factotum.example/sitemap.xml
