@@ -10,8 +10,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Intro overlay: decide before first paint to avoid a flash. First visit only,
+       skipped for reduced-motion. Force a replay with #intro or ?intro=1.
+       A failsafe removes the overlay even if intro.js never runs. -->
+  <script>
+    (function () {
+      try {
+        var force = location.hash === "#intro" || /[?&]intro=1\b/.test(location.search);
+        var seen = localStorage.getItem("factotum:intro:v1");
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        // TODO(testing): first-visit gate temporarily disabled — shows every load.
+        // To restore first-visit-only, change condition back to: force || (!seen && !reduce)
+        if (!reduce) {
+          document.documentElement.classList.add("intro-pending");
+          window.__introFailsafe = setTimeout(function () {
+            document.documentElement.classList.remove("intro-pending");
+          }, 9000);
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <!-- ============ First-visit watercolour intro ============ -->
+  <div id="intro" aria-hidden="true">
+    <canvas id="introCanvas"></canvas>
+    <div class="intro__content">
+      <p class="intro__quote">
+        curiosity is the first brushstroke of a great story.
+        <span class="sub">venture in &mdash; there are no perfect stories, only the ones you begin.</span>
+        <span class="attr">&mdash; factotum</span>
+      </p>
+    </div>
+    <span class="intro__hint">brush it away</span>
+    <button class="intro__skip" type="button" aria-label="Skip intro">skip &times;</button>
+  </div>
+
   <!-- ============ Header ============ -->
   <header class="site-header">
     <div class="container nav">
@@ -157,6 +192,7 @@
     </div>
   </footer>
 
+  <script src="js/intro.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

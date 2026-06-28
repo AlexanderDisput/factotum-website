@@ -252,7 +252,15 @@ p { color: var(--ink-soft); }
 .hero__inner {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  max-width: 640px;
+  /* frosted card so the text stays readable over the watercolour art */
+  background: rgba(244, 241, 234, 0.35);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: var(--shadow-soft);
 }
 .hero h1 { margin-bottom: 1.25rem; }
 .hero .lead {
@@ -705,6 +713,129 @@ p { color: var(--ink-soft); }
   padding-top: 1.25rem;
   font-size: 0.85rem;
   color: rgba(244, 241, 234, 0.65);
+}
+
+/* =====================================================================
+   First-visit watercolour intro
+   ===================================================================== */
+/* Lock scroll while the intro is showing. Overlay is hidden unless JS
+   (early head script) marks the page as intro-pending, so no-JS users
+   and returning visitors see the site immediately. */
+html.intro-pending,
+html.intro-pending body { overflow: hidden; height: 100%; }
+
+/* Keep the website heavily blurred behind the overlay (so the brushed-away
+   areas reveal only a soft blur, not the crisp site), then sharpen it in
+   sync with the overlay fade for a single clean handoff. */
+html.intro-pending body > :not(#intro) {
+  filter: blur(16px);
+  transition: filter 800ms ease;
+}
+html.intro-pending.intro-clearing body > :not(#intro) {
+  filter: blur(0);
+}
+
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  opacity: 1;
+  transition: opacity 700ms ease;
+}
+html.intro-pending #intro { display: block; }
+#intro.fade-out { opacity: 0; }
+
+#introCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;            /* let us paint without the page scrolling */
+  cursor: crosshair;
+}
+
+.intro__content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none;          /* clicks/drags pass through to the canvas */
+  transition: opacity 600ms ease;
+}
+.intro__quote {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: lowercase;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
+  line-height: 1.18;
+  max-width: 18ch;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 18px rgba(244, 241, 234, 0.6);
+}
+.intro__quote .sub {
+  display: block;
+  margin-top: 1.1rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  color: var(--ink-soft);
+  max-width: 30ch;
+  margin-inline: auto;
+}
+.intro__quote .attr {
+  display: block;
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--indigo);
+}
+
+.intro__hint {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.5rem, 5vh, 3rem);
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  pointer-events: none;
+  animation: introHintPulse 2.4s ease-in-out infinite;
+}
+.intro__hint::before { content: "✦ "; color: var(--magenta); }
+@keyframes introHintPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+
+.intro__skip {
+  position: absolute;
+  top: clamp(1rem, 3vh, 1.75rem);
+  right: clamp(1rem, 3vw, 1.75rem);
+  font-family: var(--font-display);
+  text-transform: lowercase;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  background: rgba(244, 241, 234, 0.55);
+  border: 1px solid rgba(30, 27, 24, 0.12);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background var(--transition), color var(--transition);
+}
+.intro__skip:hover { background: var(--ink); color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  #intro { display: none !important; }
+  html.intro-pending, html.intro-pending body { overflow: auto; height: auto; }
 }
 
 /* ----------  Reveal-on-scroll  ---------- */
