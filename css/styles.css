@@ -789,6 +789,27 @@ p { color: var(--ink-soft); }
 .photo-card { will-change: transform; }
 
 /* =====================================================================
+   Keep the scroll-drawn line from crossing readable text.
+   Bare-on-paper text gets an invisible paper "knockout" (a soft backing the
+   same colour as the page) so the line breaks around it rather than weaving
+   through. Card & footer text already sit on an opaque surface. The dark
+   quote band knocks out with ink so the white line breaks around it too.
+   ===================================================================== */
+:is(.page-hero, .section-head, .prose, .coming-soon) :is(.eyebrow, h1, h2, h3, p),
+.showcase-row > div :is(h3, p),
+.section > .container.text-center > :is(h2, p),
+.contact-grid > div:first-child :is(h2, p, .label, a, span) {
+  background-color: var(--paper);
+  box-shadow: 0 0 9px 3px var(--paper);
+  border-radius: 4px;
+}
+.quote-band :is(blockquote, cite) {
+  background-color: var(--ink);
+  box-shadow: 0 0 12px 5px var(--ink);
+  border-radius: 6px;
+}
+
+/* =====================================================================
    First-visit watercolour intro
    ===================================================================== */
 /* Lock scroll while the intro is showing. Overlay is hidden unless JS
