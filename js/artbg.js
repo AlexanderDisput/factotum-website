@@ -9,7 +9,6 @@
   "use strict";
 
   var SVGNS = "http://www.w3.org/2000/svg";
-  var DARK_SELECTOR = ".quote-band";   // footer excluded — line stops before it
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Deterministic pseudo-random so the line is identical every load. */
@@ -30,17 +29,9 @@
   layer.appendChild(svg);
   document.body.insertBefore(layer, document.body.firstChild);
 
-  /* ---- White overlays inside each dark section ---- */
+  /* Dark sections (quote bands) intentionally show NO line — the main line is
+     simply hidden behind their background, so no white overlay is created. */
   var overlays = [];
-  Array.prototype.forEach.call(document.querySelectorAll(DARK_SELECTOR), function (el) {
-    var osvg = document.createElementNS(SVGNS, "svg");
-    osvg.setAttribute("preserveAspectRatio", "none");
-    osvg.setAttribute("class", "artbg-dark");
-    var opath = document.createElementNS(SVGNS, "path");
-    osvg.appendChild(opath);
-    el.insertBefore(osvg, el.firstChild);   // behind the section's content
-    overlays.push({ el: el, svg: osvg, path: opath });
-  });
 
   /* ---- Build a criss-crossing "one-line" path for a given size ---- */
   function buildPath(w, h) {

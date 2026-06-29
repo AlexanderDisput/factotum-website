@@ -5,8 +5,9 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Agent / tooling
-.claude/
+# Agent / tooling — ignore local settings but keep shared project skills
+.claude/*
+!.claude/skills/
 
 # Internal source material (not part of the published site)
 about.pdf
